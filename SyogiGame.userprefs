@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\pieces\Fu.cs">
+    <Files>
+      <File FileName="Assets\Script\login.cs" Line="4" Column="1" />
+      <File FileName="Assets\Script\changetable.cs" Line="33" Column="26" />
+      <File FileName="Assets\Script\move.cs" Line="6" Column="6" />
+      <File FileName="Assets\Script\GlobalObject.cs" Line="32" Column="21" />
+      <File FileName="Assets\Script\Getinfo.cs" Line="25" Column="2" />
+      <File FileName="Assets\Script\pieces\Fu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\piecespread.cs" Line="11" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
