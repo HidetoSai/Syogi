@@ -19,10 +19,10 @@ public class changetable : MonoBehaviour {
 
 		if (position <= 9 && position >= 1) {
 			temp = position - 5f;
-			changed = temp * -35f;
+			changed = temp * -50f;
 			return changed; 
 		} else {
-			temp = position / -35f;
+			temp = position / -50f;
 			changed = temp + 5f;
 			return changed;
 		}
@@ -30,7 +30,7 @@ public class changetable : MonoBehaviour {
 
 	public static float BoardToWorld(int board_p) {
 		float changed;
-		changed = board_p * 35f;
+		changed = board_p * 50f;
 		return changed;
 	}
 }			
