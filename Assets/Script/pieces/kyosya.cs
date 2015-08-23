@@ -1,24 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Kyosya : MonoBehaviour {
+public class Kyosya : CreatePanel {
 
-	public GameObject panel;
-	GameObject panel_obj;
-	private float offset = 50f;
+	Vector3 onestep;
 	private float nowpos = 0;
 	private float maxmove = 0;
-
+	
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
-
+	
 	public void OnClick() {
 		if (GlobalObject.overlap_flag == 0) {
 			Kyosya_move();
@@ -31,21 +29,18 @@ public class Kyosya : MonoBehaviour {
 			GlobalObject.overlap_flag = 0;
 		}
 	}
-
+	
 	void Kyosya_move() {
-		nowpos = changetable.changeposition(this.transform.localPosition.y);
-		maxmove = nowpos - 1f;
-		if (maxmove > 0) {
-			for (int i = 0; i < maxmove; i++) {
-				panel_obj = (GameObject)Instantiate (panel);
-				panel_obj.transform.SetParent (this.transform.parent);
-				panel_obj.transform.localPosition = this.transform.localPosition;
-				panel_obj.transform.localPosition = new Vector3 (panel_obj.transform.localPosition.x, panel_obj.transform.localPosition.y + offset, 0f);
-				offset += 50f;
-			}
-			offset = 50f;
-		}
 		GlobalObject.setobject (this.gameObject);
+		onestep = this.transform.position;
+		onestep = new Vector3 (this.transform.position.x, this.transform.position.y + 50f, 0);
+		RaycastHit2D hit = Physics2D.Raycast(onestep,  Vector2.up);
+		if (hit.collider != null) {
+			maxmove = changetable.changeposition (hit.collider.gameObject.transform.localPosition.y) - 2f;
+		} else {
+			nowpos = changetable.changeposition (this.transform.localPosition.y);
+			maxmove = nowpos - 1f;
+		}
+		createpanel ((int)maxmove, 6);
 	}
-
 }
