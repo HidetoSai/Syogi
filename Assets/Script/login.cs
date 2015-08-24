@@ -35,8 +35,10 @@ public class login : MonoBehaviour {
 
 		var jsonData = Json.Deserialize(www.text) as Dictionary<string,object>;
 		string pid = jsonData["play_id"].ToString();
+		string uid = jsonData ["user_id"].ToString ();
 
-		GlobalObject.setparam (pid);
+		GlobalObject.setplayid (pid);
+		GlobalObject.setuserid (uid);
 		Application.LoadLevel ("playscene");
 	}
 }

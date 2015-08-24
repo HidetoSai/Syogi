@@ -7,8 +7,6 @@ public class CreatePanel : MonoBehaviour {
 	private GameObject panel_obj;
 	private GameObject piece;
 	private float offset = 50f;
-	private RaycastHit2D hit;
-	private Vector3 onestep;
 
 	// Use this for initialization
 	void Start () {
