@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: 2d9d26ad47ccd304f8d612ff5abaf76e
+timeCreated: 1440409539
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - al_Fu: {instanceID: 0}
+  - al_Kyosya: {instanceID: 0}
+  - al_Keima: {instanceID: 0}
+  - al_Gin: {fileID: 185300, guid: 34d7c352763129d448b2ae13bdba8553, type: 2}
+  - al_Kin: {instanceID: 0}
+  - al_Kaku: {instanceID: 0}
+  - al_Hisya: {instanceID: 0}
+  - al_Ou: {instanceID: 0}
+  - al_FuNari: {instanceID: 0}
+  - al_KyosyaNari: {instanceID: 0}
+  - al_KeimaNari: {instanceID: 0}
+  - al_GinNari: {instanceID: 0}
+  - al_Uma: {instanceID: 0}
+  - al_Ryu: {instanceID: 0}
+  - en_Fu: {instanceID: 0}
+  - en_Kyosya: {instanceID: 0}
+  - en_Keima: {instanceID: 0}
+  - en_Gin: {instanceID: 0}
+  - en_Kin: {instanceID: 0}
+  - en_Kaku: {instanceID: 0}
+  - en_Hisya: {instanceID: 0}
+  - en_Ou: {instanceID: 0}
+  - en_FuNari: {instanceID: 0}
+  - en_KyosyaNari: {instanceID: 0}
+  - en_KeimaNari: {instanceID: 0}
+  - en_GinNari: {instanceID: 0}
+  - en_Uma: {instanceID: 0}
+  - en_Ryu: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

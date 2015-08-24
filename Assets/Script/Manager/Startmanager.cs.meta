@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5400a71b99a3d0b4e86aa02bc91b263b
+timeCreated: 1440410066
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - waitingtext: {fileID: 187270, guid: 8ba6e1e0c2caf3040b8167237cd835d8, type: 2}
+  - starttext: {fileID: 192284, guid: 79071efa1368a634bb9a8d96f00f27f2, type: 2}
+  - outbutton: {fileID: 178346, guid: a638cbfab08f6f74e831f560a4dc5e07, type: 2}
+  - spread: {fileID: 114268, guid: f0bfe23497526454dad9dac53ae497c2, type: 2}
+  - changetable: {fileID: 162574, guid: 49474a65a91ff1e46822f85582ca6ef0, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
