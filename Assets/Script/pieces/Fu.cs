@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Fu : CreatePanel {
+public class Fu : MoveBehavior {
 
 	private float nowpos = 0;
 	

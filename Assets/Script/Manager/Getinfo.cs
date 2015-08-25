@@ -19,8 +19,9 @@ public class Getinfo : MonoBehaviour {
 	string[] playarray = new string[4];
 	string[] winnerarray = new string[1];
 	string[,] piecearray = new string[40, 5];
+	string[] pieceid = new string[40];
 
-	int count = 100;
+	int count = 30;
 
 
 	// Use this for initialization
@@ -31,7 +32,7 @@ public class Getinfo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		count++;
-		if (count == 180) {
+		if (count == 60) {
 			StartCoroutine (Get ((url_st), 1));
 			StartCoroutine (Get ((url_us), 2));
 			StartCoroutine (Get ((url_pl), 3));
@@ -124,6 +125,7 @@ public class Getinfo : MonoBehaviour {
 		int i = 0, j = 0;
 		foreach (string firstKey in json.Keys) {
 			//Debug.Log ("firstjson[" + firstKey + "]=" + json [firstKey]);
+			pieceid[i] = firstKey;
 			Dictionary<string,object> valueDic = (Dictionary<string, object>)json [firstKey];
 			j = 0;
 			foreach (string secondKey in valueDic.Keys) {
@@ -134,6 +136,7 @@ public class Getinfo : MonoBehaviour {
 			}
 			i++;
 		}
+		GlobalObject.setpieceid (pieceid);
 		GlobalObject.setpiece (piecearray);
 	}
 }

@@ -7,10 +7,11 @@ public class Startmanager: MonoBehaviour {
 	public GameObject starttext;
 	public GameObject spread;
 	public GameObject changetable;
+	public GameObject turnmanager;
 	private GameObject waitingtext_obj;
 	private GameObject starttext_obj;
 	private GameObject spread_obj;
-	private GameObject change_obj;
+	private GameObject turn_obj;
 	private string[] gamestate = new string[1];
 	private int count = 0;
 
@@ -30,10 +31,12 @@ public class Startmanager: MonoBehaviour {
 			starttext_obj.transform.SetParent(this.transform.parent);
 			starttext_obj.transform.localPosition = new Vector3(0, 0, 0);
 			StartCoroutine(delaydestroy(0.5f, starttext_obj));
-			StartCoroutine(delaydestroy(1.5f, this.gameObject));
-			change_obj = (GameObject)Instantiate(changetable);
+			StartCoroutine(delaydestroy(1f, this.gameObject));
+			Instantiate(changetable);
 			spread_obj = (GameObject)Instantiate(spread);
 			spread_obj.transform.SetParent(this.transform.parent);
+			turn_obj = (GameObject)Instantiate(turnmanager);
+			turn_obj.transform.SetParent(this.transform.parent);
 			count++;
 		}
 	}

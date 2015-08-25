@@ -10,13 +10,7 @@ public class changetable : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		uid = GlobalObject.getuserid();
-		usersinfo = GlobalObject.getusers ();
-		if (usersinfo [0, 0] == uid) {
-			offset = -50f;
-		} else {
-			offset = 50f;
-			//GameObject.Find("Canvas/Background/Board").transform.Rotate(new Vector3(180f, 180f, 0f));
-		}
+		StartCoroutine (firstdelay (0.1f));
 	}
 	
 	// Update is called once per frame
@@ -35,6 +29,22 @@ public class changetable : MonoBehaviour {
 			temp = position / offset;
 			changed = temp + 5f;
 			return changed;
+		}
+	}
+
+	public static float distancesearch(float max, float nowpos) {
+		float temp;
+		float changed;
+		temp = 
+	}
+
+	IEnumerator firstdelay(float time) {
+		yield return new WaitForSeconds(time);
+		usersinfo = GlobalObject.getusers ();
+		if (usersinfo [0, 0] == uid) {
+			offset = -50f;
+		} else {
+			offset = 50f;
 		}
 	}
 }

@@ -11,6 +11,7 @@ public class GlobalObject : MonoBehaviour {
 	private static string[] saveplay = new string[4];
 	private static string[] savewinner = new string[1];
 	private static string[,] savepiece = new string[40, 5];
+	private static string[] savepieceid = new string[40];
 	public static int overlap_flag = 0;
 
 	// Use this for initialization
@@ -55,6 +56,10 @@ public class GlobalObject : MonoBehaviour {
 		savepiece = piece;
 	}
 
+	public static void setpieceid(string[] pieceid) {
+		savepieceid = pieceid;
+	}
+
 	public static string getplayid() {
 		return saveplayid;
 	}
@@ -85,6 +90,10 @@ public class GlobalObject : MonoBehaviour {
 
 	public static string[,] getpiece() {
 		return savepiece;
+	}
+
+	public static string[] getpieceid() {
+		return savepieceid;
 	}
 }
 

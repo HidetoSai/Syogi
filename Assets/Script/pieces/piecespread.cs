@@ -7,6 +7,7 @@ public class piecespread : MonoBehaviour {
 	private string uid;
 	private string[] playinfo = new string[4];
 	private string[,] pieceinfo = new string[40, 5];
+	private string[] pieceid = new string[40];
 	int count = 2;
 
 	public GameObject al_Fu;
@@ -42,13 +43,17 @@ public class piecespread : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		uid = GlobalObject.getuserid ();
-		replace ();
+		Invoke("replace", 0.4f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		playinfo = GlobalObject.getplay ();
 		if(int.Parse(playinfo[0]) == count){
+			var clones = GameObject.FindGameObjectsWithTag ("Koma");
+			foreach (var clone in clones) {
+				Destroy (clone);
+			}
 			replace();
 			count++;
 		}
@@ -56,109 +61,110 @@ public class piecespread : MonoBehaviour {
 
 	void replace() {
 		pieceinfo = GlobalObject.getpiece ();
+		pieceid = GlobalObject.getpieceid ();
 		for (int i = 0; i < pieceinfo.GetLength(0); i++) {
 			switch (pieceinfo [i, 0]) {
 			case "fu":
 				if (pieceinfo [i, 3] == uid) {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (al_Fu, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_Fu, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (al_FuNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_FuNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				} else {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (en_Fu, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_Fu, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (en_FuNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_FuNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				}
 				break;
 			case "kyosha":
 				if (pieceinfo [i, 3] == uid) {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (al_Kyosya, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_Kyosya, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (al_KyosyaNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_KyosyaNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				} else {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (en_Kyosya, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_Kyosya, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (en_KyosyaNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_KyosyaNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				}
 				break;
 			case "keima":
 				if (pieceinfo [i, 3] == uid) {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (al_Keima, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_Keima, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (al_KeimaNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_KeimaNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				} else {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (en_Keima, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_Keima, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (en_KeimaNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_KeimaNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				}
 				break;
 			case "gin":
 				if (pieceinfo [i, 3] == uid) {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (al_Gin, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_Gin, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (al_GinNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_GinNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				} else {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (en_Gin, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_Gin, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (en_GinNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_GinNari, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				}
 				break;
 			case "kin":
 				if (pieceinfo [i, 3] == uid) {
-					createpiece (al_Kin, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+					createpiece (al_Kin, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 				} else {
-					createpiece (en_Kin, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+					createpiece (en_Kin, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 				}
 				break;
 			case "oh":
 				if (pieceinfo [i, 3] == uid) {
-					createpiece (al_Ou, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+					createpiece (al_Ou, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 				} else {
-					createpiece (en_Ou, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+					createpiece (en_Ou, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 				}
 				break;
 			case "kaku":
 				if (pieceinfo [i, 3] == uid) {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (al_Kaku, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_Kaku, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (al_Uma, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_Uma, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				} else {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (en_Kaku, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_Kaku, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (en_Uma, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_Uma, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				}
 				break;
 			case "hisha":
 				if (pieceinfo [i, 3] == uid) {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (al_Hisya, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_Hisya, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (al_Ryu, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (al_Ryu, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				} else {
 					if (pieceinfo [i, 4] == "False") {
-						createpiece (en_Hisya, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_Hisya, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					} else {
-						createpiece (en_Ryu, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]));
+						createpiece (en_Ryu, float.Parse (pieceinfo [i, 1]), float.Parse (pieceinfo [i, 2]), pieceid[i]);
 					}
 				}
 				break;
@@ -168,10 +174,11 @@ public class piecespread : MonoBehaviour {
 		}
 	}
 
-	void createpiece(GameObject piece, float posx, float posy) {
+	void createpiece(GameObject piece, float posx, float posy, string id) {
 		GameObject obj = (GameObject)Instantiate (piece);
 		obj.transform.SetParent (this.transform.parent);
 		obj.transform.localPosition = new Vector3 (changetable.changeposition(posx), changetable.changeposition(posy), 0);
+		obj.transform.name = id;
 	}
 }
 
